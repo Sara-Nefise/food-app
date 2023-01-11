@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>652384629019-7lq7hgb79gq8qkumi9uvuqcn2ei1728n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.652384629019-7lq7hgb79gq8qkumi9uvuqcn2ei1728n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAhN3UaRUa96tNy7MUi5_zRbxjdlGZjlKg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>652384629019</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.flutter.flutter.app</string>
+	<key>PROJECT_ID</key>
+	<string>foodapp-1154d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>foodapp-1154d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:652384629019:ios:b3193ee763d586b048e3be</string>
+</dict>
+</plist>
