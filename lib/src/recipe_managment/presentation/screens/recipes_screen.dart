@@ -64,9 +64,7 @@ class RecipesScreen extends StatelessWidget {
                   child: CategoryItemList(categories: categories),
                 ),
                 context.emptyMeduimBox,
-                SizedBox(
-                  height: context.height * 0.5,
-                  width: context.width * 0.85,
+                Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: recipes.length,

@@ -74,8 +74,7 @@ class StrorageTipsScreen extends StatelessWidget {
                       context.emptyMeduimBox,
                       CategoryItemList(categories: categories),
                       context.emptyMeduimBox,
-                      SizedBox(
-                          height: context.height * 0.45,
+                      Expanded(
                           child: ListView.builder(
                               shrinkWrap: true,
                               itemCount: tips.length,

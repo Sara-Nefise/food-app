@@ -12,6 +12,7 @@ class CustomReactiveTextField extends StatelessWidget {
     required this.validation,
     this.textAction,
     this.onSubmit,
+    this.onchange,
   }) : super(key: key);
   final String formController;
   final String hint;
@@ -20,9 +21,12 @@ class CustomReactiveTextField extends StatelessWidget {
   final Map<String, String Function(Object)> validation;
   final TextInputAction? textAction;
   final void Function(FormControl<Object?>)? onSubmit;
+  final void Function(FormControl<Object?>)? onchange;
+
   @override
   Widget build(BuildContext context) {
     return ReactiveTextField(
+      onChanged: onchange,
       onSubmitted: onSubmit ?? (control) {},
       textInputAction: textAction ?? TextInputAction.next,
       validationMessages: validation,
