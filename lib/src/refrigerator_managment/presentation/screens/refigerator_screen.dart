@@ -61,8 +61,7 @@ class RefigeratorScreen extends StatelessWidget {
               context.emptyLowBox,
               CategoryItemList(categories: categories),
               context.emptyMeduimBox,
-              SizedBox(
-                height: context.height * 0.5,
+              Expanded(
                 child: ListView.builder(
                   shrinkWrap: true,
                   itemCount: refrigeratorList.length,

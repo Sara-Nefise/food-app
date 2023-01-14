@@ -64,15 +64,12 @@ class RecipesScreen extends StatelessWidget {
                   child: CategoryItemList(categories: categories),
                 ),
                 context.emptyMeduimBox,
-                SizedBox(
-                  height: context.height * 0.5,
-                  width: context.width * 0.85,
+                Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: recipes.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        width: double.infinity,
                         height: context.height * 0.45,
                         margin: context.panddingBottomList,
                         decoration: context.listTile,

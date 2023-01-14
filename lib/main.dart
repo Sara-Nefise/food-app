@@ -5,16 +5,12 @@ import 'package:foodapp/core/constants/color/app_colors.dart';
 import 'package:foodapp/home.dart';
 import 'package:riverpod_context/riverpod_context.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:riverpod_context/riverpod_context.dart';
-import 'firebase_options.dart';
 
 var currentIndex = StateProvider((ref) => 0);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  Firebase.initializeApp;
   runApp(ProviderScope(child: InheritedConsumer(child: MyApp())));
 }
 

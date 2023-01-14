@@ -87,52 +87,56 @@ List<Refrigerator> refrigeratorList = [
 ];
 List<Recipe> recipes = [
   Recipe(
-      image: '',
-      id: 'id12',
-      category: 'Pastries',
-      name: 'Caesar Salad',
-      details:
-          'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
-      ingredients: [
-        'Tomato',
-        'Corn',
-        'Pepper',
-      ]),
+    // image: '',
+    // id: 'id12',
+    // category: 'Pastries',
+    name: 'Caesar Salad',
+    details:
+        'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
+    ingredients: '',
+    // ingredients: [
+    //   'Tomato',
+    //   'Corn',
+    //   'Pepper',
+    // ]
+  ),
   Recipe(
-      image: '',
-      id: 'id12',
-      category: 'Pastries',
-      name: 'Caesar Salad',
-      details:
-          'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
-      ingredients: [
-        'Tomato',
-        'Corn',
-        'Pepper',
-      ]),
-  Recipe(
-      image: '',
-      id: 'id12',
-      category: 'Soups',
-      name: 'maet soup',
-      details:
-          'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
-      ingredients: [
-        'Tomato',
-        'Corn',
-        'Pepper',
-      ]),
-  Recipe(
-      image: '',
-      id: 'id12',
-      category: 'Grills',
-      name: 'Meat',
-      details:
-          'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
-      ingredients: [
-        'meat',
-        'Pepper',
-      ]),
+    // image: '',
+    // id: 'id12',
+    // category: 'Pastries',
+    name: 'Caesar Salad',
+    details:
+        'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
+    ingredients: '',
+    // ingredients: [
+    //   'Tomato',
+    //   'Corn',
+    //   'Pepper',
+    // ]
+  ),
+  // Recipe(
+  //     image: '',
+  //     id: 'id12',
+  //     category: 'Soups',
+  //     name: 'maet soup',
+  //     details:
+  //         'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
+  //     ingredients: [
+  //       'Tomato',
+  //       'Corn',
+  //       'Pepper',
+  //     ]),
+  // Recipe(
+  //     image: '',
+  //     id: 'id12',
+  //     category: 'Grills',
+  //     name: 'Meat',
+  //     details:
+  //         'A Caesar salad is a green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper. In its original form, this salad was prepared and served',
+  //     ingredients: [
+  //       'meat',
+  //       'Pepper',
+  //     ]),
 ];
 List<Tips> tips = [
   Tips(

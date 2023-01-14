@@ -33,16 +33,18 @@ class AppNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        children: [
-          RefigeratorScreen(),
-          RecipesScreen(),
-          StrorageTipsScreen(),
-          Text('profile'),
-          AddRecipeItemScreen(),
-          AddTipItemScreen(),
-        ],
-        index: context.watch(currentIndex),
+      body: SafeArea(
+        child: IndexedStack(
+          children: [
+            RefigeratorScreen(),
+            RecipesScreen(),
+            StrorageTipsScreen(),
+            Text('profile'),
+            AddRecipeItemScreen(),
+            AddTipItemScreen(),
+          ],
+          index: context.watch(currentIndex),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
