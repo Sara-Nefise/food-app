@@ -63,13 +63,15 @@ class RecipeCreationController extends StateNotifier<FormGroup> {
     // state.copyWith(ingredients: form.control('ingredients').value);
   }
 
-  void submit() {
+  Future<void> submit() async {
     if (form.valid) {
       print(state.valueChanges);
 
       print("Form is valid, the value is ${form.value}");
       final item = Recipe.fromJson(form.value);
-      ref.read(firestorRecipeRepositoryProvider).createRecipeItem(item: item);
+      await ref
+          .read(firestorRecipeRepositoryProvider)
+          .createRecipeItem(item: item);
     } else {
       print("Form is invalid");
     }

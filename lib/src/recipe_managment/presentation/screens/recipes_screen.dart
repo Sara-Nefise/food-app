@@ -70,7 +70,6 @@ class RecipesScreen extends StatelessWidget {
                     itemCount: recipes.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        width: double.infinity,
                         height: context.height * 0.45,
                         margin: context.panddingBottomList,
                         decoration: context.listTile,
