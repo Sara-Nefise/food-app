@@ -20,7 +20,6 @@ Tips _$TipsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Tips {
-  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get detail => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
@@ -35,7 +34,7 @@ abstract class $TipsCopyWith<$Res> {
   factory $TipsCopyWith(Tips value, $Res Function(Tips) then) =
       _$TipsCopyWithImpl<$Res, Tips>;
   @useResult
-  $Res call({String id, String name, String detail, String category});
+  $Res call({String name, String detail, String category});
 }
 
 /// @nodoc
@@ -51,16 +50,11 @@ class _$TipsCopyWithImpl<$Res, $Val extends Tips>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? detail = null,
     Object? category = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -83,7 +77,7 @@ abstract class _$$_TipsCopyWith<$Res> implements $TipsCopyWith<$Res> {
       __$$_TipsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String detail, String category});
+  $Res call({String name, String detail, String category});
 }
 
 /// @nodoc
@@ -95,16 +89,11 @@ class __$$_TipsCopyWithImpl<$Res> extends _$TipsCopyWithImpl<$Res, _$_Tips>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? detail = null,
     Object? category = null,
   }) {
     return _then(_$_Tips(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -124,16 +113,10 @@ class __$$_TipsCopyWithImpl<$Res> extends _$TipsCopyWithImpl<$Res, _$_Tips>
 /// @nodoc
 @JsonSerializable()
 class _$_Tips implements _Tips {
-  _$_Tips(
-      {required this.id,
-      required this.name,
-      required this.detail,
-      required this.category});
+  _$_Tips({required this.name, required this.detail, required this.category});
 
   factory _$_Tips.fromJson(Map<String, dynamic> json) => _$$_TipsFromJson(json);
 
-  @override
-  final String id;
   @override
   final String name;
   @override
@@ -143,7 +126,7 @@ class _$_Tips implements _Tips {
 
   @override
   String toString() {
-    return 'Tips(id: $id, name: $name, detail: $detail, category: $category)';
+    return 'Tips(name: $name, detail: $detail, category: $category)';
   }
 
   @override
@@ -151,7 +134,6 @@ class _$_Tips implements _Tips {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Tips &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.detail, detail) || other.detail == detail) &&
             (identical(other.category, category) ||
@@ -160,7 +142,7 @@ class _$_Tips implements _Tips {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, detail, category);
+  int get hashCode => Object.hash(runtimeType, name, detail, category);
 
   @JsonKey(ignore: true)
   @override
@@ -178,15 +160,12 @@ class _$_Tips implements _Tips {
 
 abstract class _Tips implements Tips {
   factory _Tips(
-      {required final String id,
-      required final String name,
+      {required final String name,
       required final String detail,
       required final String category}) = _$_Tips;
 
   factory _Tips.fromJson(Map<String, dynamic> json) = _$_Tips.fromJson;
 
-  @override
-  String get id;
   @override
   String get name;
   @override

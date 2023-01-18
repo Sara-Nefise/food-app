@@ -10,7 +10,7 @@ class ValidationButton extends StatelessWidget {
     this.callback,
   }) : super(key: key);
   final String text;
-  final void Function()? callback;
+  final Future<void> Function()? callback;
 
   @override
   Widget build(BuildContext context) {

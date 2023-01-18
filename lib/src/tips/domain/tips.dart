@@ -6,7 +6,6 @@ part 'tips.g.dart';
 @freezed
 class Tips with _$Tips {
   factory Tips({
-    required String id,
     required String name,
     required String detail,
     required String category,

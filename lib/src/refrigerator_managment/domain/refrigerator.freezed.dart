@@ -20,7 +20,6 @@ Refrigerator _$RefrigeratorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Refrigerator {
-  String get id => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   String get expirationD => throw _privateConstructorUsedError;
   String get marketName => throw _privateConstructorUsedError;
@@ -42,8 +41,7 @@ abstract class $RefrigeratorCopyWith<$Res> {
       _$RefrigeratorCopyWithImpl<$Res, Refrigerator>;
   @useResult
   $Res call(
-      {String id,
-      String category,
+      {String category,
       String expirationD,
       String marketName,
       String name,
@@ -65,7 +63,6 @@ class _$RefrigeratorCopyWithImpl<$Res, $Val extends Refrigerator>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? category = null,
     Object? expirationD = null,
     Object? marketName = null,
@@ -75,10 +72,6 @@ class _$RefrigeratorCopyWithImpl<$Res, $Val extends Refrigerator>
     Object? unit = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -120,8 +113,7 @@ abstract class _$$_RefrigeratorCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String category,
+      {String category,
       String expirationD,
       String marketName,
       String name,
@@ -141,7 +133,6 @@ class __$$_RefrigeratorCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? category = null,
     Object? expirationD = null,
     Object? marketName = null,
@@ -151,10 +142,6 @@ class __$$_RefrigeratorCopyWithImpl<$Res>
     Object? unit = null,
   }) {
     return _then(_$_Refrigerator(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -191,8 +178,7 @@ class __$$_RefrigeratorCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Refrigerator implements _Refrigerator {
   _$_Refrigerator(
-      {required this.id,
-      required this.category,
+      {required this.category,
       required this.expirationD,
       required this.marketName,
       required this.name,
@@ -203,8 +189,6 @@ class _$_Refrigerator implements _Refrigerator {
   factory _$_Refrigerator.fromJson(Map<String, dynamic> json) =>
       _$$_RefrigeratorFromJson(json);
 
-  @override
-  final String id;
   @override
   final String category;
   @override
@@ -222,7 +206,7 @@ class _$_Refrigerator implements _Refrigerator {
 
   @override
   String toString() {
-    return 'Refrigerator(id: $id, category: $category, expirationD: $expirationD, marketName: $marketName, name: $name, purchaseD: $purchaseD, quantity: $quantity, unit: $unit)';
+    return 'Refrigerator(category: $category, expirationD: $expirationD, marketName: $marketName, name: $name, purchaseD: $purchaseD, quantity: $quantity, unit: $unit)';
   }
 
   @override
@@ -230,7 +214,6 @@ class _$_Refrigerator implements _Refrigerator {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Refrigerator &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.expirationD, expirationD) ||
@@ -247,7 +230,7 @@ class _$_Refrigerator implements _Refrigerator {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, category, expirationD,
+  int get hashCode => Object.hash(runtimeType, category, expirationD,
       marketName, name, purchaseD, quantity, unit);
 
   @JsonKey(ignore: true)
@@ -266,8 +249,7 @@ class _$_Refrigerator implements _Refrigerator {
 
 abstract class _Refrigerator implements Refrigerator {
   factory _Refrigerator(
-      {required final String id,
-      required final String category,
+      {required final String category,
       required final String expirationD,
       required final String marketName,
       required final String name,
@@ -278,8 +260,6 @@ abstract class _Refrigerator implements Refrigerator {
   factory _Refrigerator.fromJson(Map<String, dynamic> json) =
       _$_Refrigerator.fromJson;
 
-  @override
-  String get id;
   @override
   String get category;
   @override
