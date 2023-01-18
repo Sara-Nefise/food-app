@@ -59,7 +59,7 @@ extension PaddingExtensionOnly on BuildContext {
   EdgeInsets get paddingdetailField =>
       const EdgeInsets.only(top: 50, bottom: 30, left: 20, right: 20);
   EdgeInsets get paddingTipDetailField =>
-      const EdgeInsets.only(top: 70, bottom: 70, left: 20, right: 20);
+      const EdgeInsets.only(top: 70, bottom: 10, left: 20, right: 20);
 }
 
 extension PaddingExtensionSymetric on BuildContext {

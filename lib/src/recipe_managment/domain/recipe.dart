@@ -7,10 +7,10 @@ part 'recipe.g.dart';
 class Recipe with _$Recipe {
   factory Recipe({
     // required String id,
-    // required String category,
+    required String category,
     required String name,
     required String details,
-    // required String image,
+    required String image,
     required String ingredients,
   }) = _Recipe;
 

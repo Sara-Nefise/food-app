@@ -7,6 +7,7 @@ import 'package:foodapp/core/constants/color/app_colors.dart';
 import 'package:foodapp/main.dart';
 import 'package:foodapp/src/recipe_managment/presentation/screens/add_recipe.dart';
 import 'package:foodapp/src/recipe_managment/presentation/screens/recipes_screen.dart';
+import 'package:foodapp/src/refrigerator_managment/presentation/screens/add_refigerator_item.dart';
 import 'package:foodapp/src/refrigerator_managment/presentation/screens/refigerator_screen.dart';
 import 'package:foodapp/src/tips/presentation/screens/add_tip.dart';
 import 'package:foodapp/src/tips/presentation/screens/storage_tips.dart';
@@ -14,14 +15,14 @@ import 'package:riverpod_context/riverpod_context.dart';
 
 class AppNavigation extends StatelessWidget {
   AppNavigation({super.key});
-  List<IconData> iconList = [
+  final List<IconData> iconList = [
     Icons.food_bank_outlined,
     Icons.menu_book,
     Icons.tips_and_updates_outlined,
     Icons.account_box
   ];
   final autoSizeGroup = AutoSizeGroup();
-  List<String> navigationText = [
+  final List<String> navigationText = [
     'Refrigerator',
     'Recipes',
     'Storage Tips',
@@ -35,15 +36,16 @@ class AppNavigation extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: IndexedStack(
+          index: context.watch(currentIndex),
           children: [
-            RefigeratorScreen(),
+            const RefigeratorScreen(),
             RecipesScreen(),
             StrorageTipsScreen(),
-            Text('profile'),
+            const Text('profile'),
             AddRecipeItemScreen(),
-            AddTipItemScreen(),
+            AddRefigeratorItemScreen(),
+            AddTipItemScreen()
           ],
-          index: context.watch(currentIndex),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -53,7 +55,7 @@ class AppNavigation extends StatelessWidget {
           'assets/images/big_plus.png',
         ),
         onPressed: () {
-          context.read(currentIndex.notifier).state = 4;
+          context.read(currentIndex.notifier).state = 5;
         },
       ),
       bottomNavigationBar: AnimatedBottomNavigationBar.builder(

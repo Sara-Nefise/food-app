@@ -8,7 +8,6 @@ part of 'refrigerator.dart';
 
 _$_Refrigerator _$$_RefrigeratorFromJson(Map<String, dynamic> json) =>
     _$_Refrigerator(
-      id: json['id'] as String,
       category: json['category'] as String,
       expirationD: json['expirationD'] as String,
       marketName: json['marketName'] as String,
@@ -20,7 +19,6 @@ _$_Refrigerator _$$_RefrigeratorFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_RefrigeratorToJson(_$_Refrigerator instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'category': instance.category,
       'expirationD': instance.expirationD,
       'marketName': instance.marketName,

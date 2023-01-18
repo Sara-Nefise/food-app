@@ -1,12 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'refigerator.freezed.dart';
-part 'refigerator.g.dart';
+part 'refrigerator.freezed.dart';
+part 'refrigerator.g.dart';
 
 @freezed
 class Refrigerator with _$Refrigerator {
   factory Refrigerator({
-    required String id,
     required String category,
     required String expirationD,
     required String marketName,

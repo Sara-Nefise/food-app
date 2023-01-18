@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:foodapp/core/constants/app_constants.dart';
 import 'package:foodapp/core/constants/color/app_colors.dart';
 import 'package:foodapp/core/constants/extantion/app_extantion.dart';
+import 'package:foodapp/main.dart';
+import 'package:foodapp/src/recipe_managment/data/firestore_recipe_repository.dart';
+import 'package:foodapp/src/refrigerator_managment/data/firebase_refigerator_repository.dart';
+import 'package:foodapp/src/refrigerator_managment/domain/refrigerator.dart';
 import 'package:foodapp/src/refrigerator_managment/presentation/components/category_items.dart';
 import 'package:foodapp/src/refrigerator_managment/presentation/widgets/bs_text.dart';
-import 'package:foodapp/src/refrigerator_managment/presentation/components/cupertino_sreach.dart';
+import 'package:foodapp/src/refrigerator_managment/presentation/widgets/cupertino_sreach.dart';
 import 'package:foodapp/src/refrigerator_managment/presentation/widgets/dl_text.dart';
 import 'package:foodapp/src/refrigerator_managment/presentation/widgets/dm_text.dart';
 import 'package:foodapp/src/refrigerator_managment/presentation/widgets/ds_text.dart';
+import 'package:riverpod_context/riverpod_context.dart';
 
 import '../../../../core/constants/app_string.dart';
 
-class RefigeratorScreen extends StatelessWidget {
+class RefigeratorScreen extends ConsumerWidget {
   const RefigeratorScreen({super.key});
 
   final List<String> categories = const [
@@ -19,15 +25,15 @@ class RefigeratorScreen extends StatelessWidget {
     'Dairy products',
     'Meat products',
     'All',
-    'Groceries',
-    'Dairy products',
-    'Meat products',
-    'All'
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     AppConstants myString = AppConstants();
+    var categoryIndex = ref.watch(selectedIndex);
+    final refrigeratorItem = context
+        .watch(refigertorRepositoryProvider)
+        .getRefigertorItems(category: categories[categoryIndex]);
     return Container(
         width: double.infinity,
         decoration: context.imageDecoration,
@@ -61,86 +67,100 @@ class RefigeratorScreen extends StatelessWidget {
               context.emptyLowBox,
               CategoryItemList(categories: categories),
               context.emptyMeduimBox,
-              Expanded(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: refrigeratorList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: context.height * 0.095,
-                      margin: context.panddingBottomList,
-                      decoration: context.listTile,
-                      child: Padding(
-                        padding: context.paddinglistTile,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                child: CircleAvatar(
-                              radius: 30,
-                              backgroundColor: AppColors.violaPurple,
-                              child: IconButton(
-                                  onPressed: () {},
-                                  icon: Image.asset(
-                                    'assets/images/edit.png',
-                                  )),
-                            )),
-                            Expanded(
-                              flex: 3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
+              FutureBuilder(
+                future: refrigeratorItem,
+                builder:
+                    (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                  if (snapshot.hasData) {
+                    List<Map>? data = snapshot.data;
+                    return Expanded(
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: data!.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            height: context.height * 0.095,
+                            margin: context.panddingBottomList,
+                            decoration: context.listTile,
+                            child: Padding(
+                              padding: context.paddinglistTile,
+                              child: Row(
                                 children: [
                                   Expanded(
-                                      child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      DSText(
-                                        text: refrigeratorList[index].name,
-                                      ),
-                                      CircleAvatar(
-                                        radius: 15,
-                                        backgroundColor: AppColors.violaPurple,
-                                        child: IconButton(
-                                            onPressed: () {},
-                                            icon: Image.asset(
-                                              'assets/images/edit.png',
-                                            )),
-                                      )
-                                    ],
+                                      child: CircleAvatar(
+                                    radius: 25,
+                                    backgroundColor: AppColors.milkWhite,
+                                    child: IconButton(
+                                        onPressed: () {},
+                                        icon: Image.asset(
+                                          'assets/images/fork.png',
+                                        )),
                                   )),
-                                  const SizedBox(height: 3),
                                   Expanded(
-                                      child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      const DSText(text: '10 Days'),
-                                      DSText(
-                                        text:
-                                            '${refrigeratorList[index].quantity.toString()}${refrigeratorList[index].unit}',
-                                      ),
-                                      CircleAvatar(
-                                        radius: 15,
-                                        backgroundColor: AppColors.redOrange,
-                                        child: IconButton(
-                                            onPressed: () {},
-                                            icon: Image.asset(
-                                              'assets/images/trash.png',
-                                            )),
-                                      )
-                                    ],
-                                  )),
+                                    flex: 3,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                            child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            DSText(text: data[index]['name']),
+                                            CircleAvatar(
+                                              radius: 15,
+                                              backgroundColor:
+                                                  AppColors.violaPurple,
+                                              child: IconButton(
+                                                  onPressed: () {},
+                                                  icon: Image.asset(
+                                                      'assets/images/edit.png')),
+                                            )
+                                          ],
+                                        )),
+                                        const SizedBox(height: 3),
+                                        Expanded(
+                                            child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            const DSText(text: '10 Days'),
+                                            DSText(
+                                              text:
+                                                  '${data[index]['quantity']}${data[index]['unit'].toString()}',
+                                            ),
+                                            CircleAvatar(
+                                              radius: 15,
+                                              backgroundColor:
+                                                  AppColors.redOrange,
+                                              child: IconButton(
+                                                  onPressed: () {},
+                                                  icon: Image.asset(
+                                                    'assets/images/trash.png',
+                                                  )),
+                                            )
+                                          ],
+                                        )),
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
-                          ],
-                        ),
+                          );
+                        },
                       ),
                     );
-                  },
-                ),
-              ),
+                  } else if (snapshot.hasError) {
+                    return Text("Error: ${snapshot.error}");
+                  } else {
+                    return const CircularProgressIndicator();
+                  }
+                },
+              )
             ],
           ),
         ));
