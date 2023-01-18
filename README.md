@@ -1,16 +1,11 @@
-# foodapp
+# Food App
 
-A new Flutter project.
+In this application, the user can enter and display the information of his refrigerator, he can also add delicious recipes, and he can display and filter them according to type, and he can also add tips related to products in order to be remembered.
 
-## Getting Started
+# Tech and Libraries
 
-This project is a starting point for a Flutter application.
+- Clean Architecture
+- State Management with [Riverpod](https://riverpod.dev)
+- Network with [HTTP](https://pub.dev/packages/http)
+- Firebase
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
