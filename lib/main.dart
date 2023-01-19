@@ -7,6 +7,7 @@ import 'package:foodapp/home.dart';
 import 'package:riverpod_context/riverpod_context.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 var currentIndex = StateProvider((ref) => 0);
 StateProvider<int> selectedIndex = StateProvider((ref) => 0);
@@ -16,6 +17,11 @@ Future<void> main() async {
   Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  FlutterError.demangleStackTrace = (StackTrace stack) {
+    if (stack is stack_trace.Trace) return stack.vmTrace;
+    if (stack is stack_trace.Chain) return stack.toTrace().vmTrace;
+    return stack;
+  };
 
   runApp(ProviderScope(child: InheritedConsumer(child: MyApp())));
 }
